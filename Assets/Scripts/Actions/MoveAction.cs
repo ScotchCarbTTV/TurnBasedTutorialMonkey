@@ -39,8 +39,7 @@ public class MoveAction : BaseAction
         else
         {
             unitAnimator.SetBool("isWalking", false);
-            isActive = false;
-            onActionComplete();
+            ActionComplete();
         }
 
         float rotateSpeed = 10f;
@@ -52,9 +51,11 @@ public class MoveAction : BaseAction
     {
         //unit will move towards the target position
 
-        this.onActionComplete = onActionComplete;
+        ActionStart(onActionComplete);
+
+        
         this.targetPosition = LevelGrid.Instance.GetWorldPosition(gridPosition);
-        isActive = true;
+        
     }
 
 
