@@ -64,6 +64,7 @@ public class Unit : MonoBehaviour
 
     public Vector3 GetWorldPosition()
     {
+        //Debug.Log("World position is" + transform.position);
         return transform.position;
     }
 

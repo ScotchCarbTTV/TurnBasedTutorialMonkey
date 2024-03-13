@@ -6,6 +6,15 @@ using UnityEngine.EventSystems;
 
 public class ShootAction : BaseAction
 {
+    public event EventHandler<OnShootEventArgs> OnShoot;
+
+    public class OnShootEventArgs : EventArgs
+    {
+        public Unit targetUnit;
+        public Unit shootingUnit;
+    }
+    
+
     private enum State
     {
         Aiming,
@@ -71,6 +80,7 @@ public class ShootAction : BaseAction
                 state = State.Cooloff;
                 float coolOffStateTime = 0.5f;
                 stateTimer = coolOffStateTime;
+                
                 break;
             case State.Cooloff:
                 ActionComplete();
@@ -82,6 +92,9 @@ public class ShootAction : BaseAction
 
     private void Shoot()
     {
+        OnShoot?.Invoke(this, new OnShootEventArgs {
+            targetUnit = targetUnit, shootingUnit = unit 
+        });
         targetUnit.Damage();
     }
 
@@ -140,6 +153,7 @@ public class ShootAction : BaseAction
         ActionStart(onActionComplete);
 
         targetUnit = LevelGrid.Instance.GetUnitAtGridPosition(gridPosition);
+        Debug.Log(targetUnit.name);
 
        // Debug.Log("Aiming");
 
@@ -148,8 +162,6 @@ public class ShootAction : BaseAction
         stateTimer = aimingStateTime;
 
         canShootBullet = true;
-    }
-
-    
+    }   
 
 }
