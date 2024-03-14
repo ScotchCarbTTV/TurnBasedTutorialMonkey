@@ -11,14 +11,14 @@ public class BulletProjectile : MonoBehaviour
     [SerializeField] private Vector3 targetPosition;
     public void Setup(Vector3 _targetPosition)
     {
-        Debug.Log("target position parameter is " + _targetPosition);
+        //Debug.Log("target position parameter is " + _targetPosition);
         this.targetPosition = _targetPosition;
-        Debug.Log("Target position is " + this.targetPosition);
+        //Debug.Log("Target position is " + this.targetPosition);
     }
 
     private void Update()
     {
-        Debug.Log(targetPosition);
+        //Debug.Log(targetPosition);
         Vector3 moveDir = (targetPosition - transform.position).normalized;
 
         float distanceBeforeMoving = Vector3.Distance(transform.position, targetPosition);

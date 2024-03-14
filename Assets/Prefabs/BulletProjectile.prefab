@@ -184,3 +184,4 @@ MonoBehaviour:
   trailRenderer: {fileID: 2161055585869762044}
   bulletHitVFXPrefab: {fileID: 764990157655966061, guid: 9058ea4dcae9487469f16662a83167ed,
     type: 3}
+  targetPosition: {x: 0, y: 0, z: 0}

@@ -95,7 +95,7 @@ public class ShootAction : BaseAction
         OnShoot?.Invoke(this, new OnShootEventArgs {
             targetUnit = targetUnit, shootingUnit = unit 
         });
-        targetUnit.Damage();
+        targetUnit.Damage(40);
     }
 
     public override string GetActionName()
@@ -153,7 +153,7 @@ public class ShootAction : BaseAction
         ActionStart(onActionComplete);
 
         targetUnit = LevelGrid.Instance.GetUnitAtGridPosition(gridPosition);
-        Debug.Log(targetUnit.name);
+        //Debug.Log(targetUnit.name);
 
        // Debug.Log("Aiming");
 
