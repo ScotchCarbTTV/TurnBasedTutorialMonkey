@@ -6,9 +6,7 @@ using UnityEngine;
 public class SpinAction : BaseAction
 {
 
-    public delegate void SpinCompleteDelegate();
-
-   
+    public delegate void SpinCompleteDelegate();   
 
     private float totalSpinAmount = 0;
 
@@ -30,10 +28,10 @@ public class SpinAction : BaseAction
     }
 
     public override void TakeAction(GridPosition gridPosition, Action onSpinComplete)
-    {
+    {  
+        totalSpinAmount = 0;
+
         ActionStart(onActionComplete);
-       
-        totalSpinAmount = 0;        
     }
 
     public override string GetActionName()

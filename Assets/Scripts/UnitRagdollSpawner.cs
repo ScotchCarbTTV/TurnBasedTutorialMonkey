@@ -24,6 +24,6 @@ public class UnitRagdollSpawner : MonoBehaviour
 
         UnitRagdoll unitRagdoll =  ragdollTransform.GetComponent<UnitRagdoll>();
 
-        unitRagdoll.Setup(originalRootBone);
+        //unitRagdoll.Setup(originalRootBone);
     }
 }
