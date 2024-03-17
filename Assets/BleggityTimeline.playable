@@ -29,14 +29,14 @@ MonoBehaviour:
   m_Name: RecorderClip
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 5
+  take: 10
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
       m_Root: 5
       m_Leaf: Recordings
       m_ForceAssetFolder: 0
-      m_AbsolutePath: C:/Users/scotc/Videos/UnityRecordings
+      m_AbsolutePath: C:/Users/scotc/Videos/UnityRecordings/Haruhi
     m_FileName: <Recorder>_<Take>
   m_Version: 1
   encoderSettings:
@@ -157,7 +157,7 @@ MonoBehaviour:
         numConsecutiveBFrames: 2
         encodingProfile: 2
         keyframeDistance: 25
-        codec: 1
+        codec: 0
         encodingQuality: 2
 --- !u!114 &11400000
 MonoBehaviour:

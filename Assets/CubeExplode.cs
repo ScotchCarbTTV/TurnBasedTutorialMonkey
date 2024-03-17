@@ -31,13 +31,13 @@ public class CubeExplode : MonoBehaviour
 
             Vector3 dir = (collision.transform.position - transform.position).normalized;
 
-            rbody.AddExplosionForce(50f, collision.transform.position, 10f);
+            rbody.AddExplosionForce(100f, collision.transform.position, 10f);
         }
 
         if(collision.gameObject.tag == "Respawn" && exploded == true)
         {
             Vector3 dir = (collision.transform.position - transform.position).normalized;
-            rbody.AddForce(dir * 10, ForceMode.Force);
+            rbody.AddForce(dir * 50, ForceMode.Force);
         }
     }
 
@@ -46,7 +46,7 @@ public class CubeExplode : MonoBehaviour
         if (collision.gameObject.tag == "Respawn" && exploded == true)
         {
             Vector3 dir = (collision.transform.position - transform.position).normalized;
-            rbody.AddForce(dir * 10, ForceMode.Force);
+            rbody.AddForce(dir * 50, ForceMode.Force);
         }
     }
 
