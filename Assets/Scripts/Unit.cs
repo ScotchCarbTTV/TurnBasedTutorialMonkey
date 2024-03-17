@@ -20,6 +20,7 @@ public class Unit : MonoBehaviour
 
     private MoveAction moveAction;
     private SpinAction spinAction;
+    private ShootAction shootAction;
 
     private BaseAction[] baseActionArray;
 
@@ -31,6 +32,7 @@ public class Unit : MonoBehaviour
 
         moveAction = GetComponent<MoveAction>();
         spinAction = GetComponent<SpinAction>();
+        shootAction = GetComponent<ShootAction>();
         baseActionArray = GetComponents<BaseAction>();
     }
 
@@ -53,8 +55,10 @@ public class Unit : MonoBehaviour
         if(newGridPosition != gridPosition)
         {
             //unit changed position
-            LevelGrid.Instance.UnitMovedGridPosition(this, gridPosition, newGridPosition);
+            GridPosition oldGridPosition = gridPosition;
             gridPosition = newGridPosition;
+
+            LevelGrid.Instance.UnitMovedGridPosition(this, oldGridPosition, newGridPosition);
         }
     }
 
@@ -65,6 +69,11 @@ public class Unit : MonoBehaviour
     public SpinAction GetSpinAction()
     {
         return spinAction;
+    }
+
+    public ShootAction GetShootAction()
+    {
+        return shootAction;
     }
 
     public GridPosition GetGridPosition()
@@ -147,6 +156,11 @@ public class Unit : MonoBehaviour
     public void Damage(int damageAmount)
     {
         healthSystem.Damage(damageAmount);
+    }
+
+    public float GetHealthNormalized()
+    {
+        return healthSystem.GetHealthNormalized();
     }
 
 }

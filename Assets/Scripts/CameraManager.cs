@@ -43,7 +43,11 @@ public class CameraManager : MonoBehaviour
                 Vector3 shoulderOffset = Quaternion.Euler(0, 90, 0) * shootDir * shoulderOffsetAmount;
 
 
-                Vector3 actionCameraPosition = shooterUnit.GetWorldPosition() + cameraCharacterHeight + shoulderOffset + (shootDir * -1);
+                Vector3 actionCameraPosition = 
+                    shooterUnit.GetWorldPosition() + 
+                    cameraCharacterHeight + 
+                    shoulderOffset + 
+                    (shootDir * -1);
 
                 actionCameraGameObject.transform.position = actionCameraPosition;
                 actionCameraGameObject.transform.LookAt(targetUnit.GetWorldPosition() + cameraCharacterHeight);
