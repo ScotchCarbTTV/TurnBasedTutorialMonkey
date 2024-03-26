@@ -12,8 +12,7 @@ public class ShootAction : BaseAction
     {
         public Unit targetUnit;
         public Unit shootingUnit;
-    }
-    
+    }    
 
     private enum State
     {
