@@ -29,18 +29,18 @@ MonoBehaviour:
   m_Name: RecorderClip
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 10
+  take: 12
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
       m_Root: 5
       m_Leaf: Recordings
       m_ForceAssetFolder: 0
-      m_AbsolutePath: C:/Users/scotc/Videos/UnityRecordings/Haruhi
+      m_AbsolutePath: C:/Users/belli/Videos
     m_FileName: <Recorder>_<Take>
   m_Version: 1
   encoderSettings:
-    rid: 7133705494056140913
+    rid: 7652622439516471297
   captureAlpha: 0
   captureAudio: 1
   m_ImageInputSelector:
@@ -149,7 +149,7 @@ MonoBehaviour:
         shutterFullyOpen: 0.25
         shutterBeginsClosing: 0.75
         useSubPixelJitter: 1
-    - rid: 7133705494056140913
+    - rid: 7652622439516471297
       type: {class: CoreEncoderSettings, ns: UnityEditor.Recorder.Encoder, asm: Unity.Recorder.Editor}
       data:
         targetBitRate: 8
@@ -157,7 +157,7 @@ MonoBehaviour:
         numConsecutiveBFrames: 2
         encodingProfile: 2
         keyframeDistance: 25
-        codec: 0
+        codec: 1
         encodingQuality: 2
 --- !u!114 &11400000
 MonoBehaviour:
